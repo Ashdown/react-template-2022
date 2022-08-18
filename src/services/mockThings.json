@@ -1,0 +1,15 @@
+{
+  "things": [
+  {
+    "id": 1,
+    "details": {
+      "name": "Thing One"
+    }
+  },
+    {
+      "id": 2,
+      "details": {
+        "name": "Thing Two"
+      }
+    }
+]}

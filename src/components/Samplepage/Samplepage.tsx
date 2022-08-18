@@ -1,6 +1,7 @@
 import React from 'react';
 import {createUseStyles} from "react-jss";
 import {MEDIA_QUERIES} from "../../constants";
+import useThings from "./useThings";
 
 const useStyles = createUseStyles(() => ({
   header: {
@@ -20,6 +21,10 @@ const useStyles = createUseStyles(() => ({
 const Samplepage = () => {
 
   const classes = useStyles()
+
+  const things = useThings()
+
+  console.log('things', things)
 
   return(<>
     <h1 className={classes.header}>Sample page</h1>
