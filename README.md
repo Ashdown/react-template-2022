@@ -12,7 +12,9 @@ Boilerplate react app with the following features:
 ### Run app Locally
 
 - `npm install`
+- `npm run start-db`
 - `npm start`
+- visit http://localhost:8000/
 
 ## Run Test Suite
 

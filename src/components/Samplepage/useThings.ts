@@ -2,7 +2,7 @@ import useThingsQuery from "../../services/useThingsQuery";
 
 type Thing = {
   id: number;
-  name: string;
+  title: string;
 }
 
 type Response = {
@@ -14,7 +14,7 @@ type Response = {
 const getCleanData = (uncleanThings:any[]):Thing[] =>
   uncleanThings.map( (uncleanThing, index) => ({
     id: uncleanThing?.id || index,
-    name: uncleanThing?.content?.name || ''
+    title: uncleanThing?.title || ''
   }))
 
 const useThings = ():Response => {
@@ -22,7 +22,7 @@ const useThings = ():Response => {
   const { data, isLoading, isError } = useThingsQuery()
 
   return ({
-    data: getCleanData(data?.things || []),
+    data: getCleanData(data || []),
     isLoading: isLoading,
     isError: isError,
   })
