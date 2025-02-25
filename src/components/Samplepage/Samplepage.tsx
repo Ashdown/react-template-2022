@@ -2,6 +2,7 @@ import React from 'react';
 import {createUseStyles} from "react-jss";
 import {MEDIA_QUERIES} from "../../constants";
 import useThings from "./useThings";
+import useAddThingMutation from '../../services/useAddThingMutation';
 
 const useStyles = createUseStyles(() => ({
     header: {
@@ -24,7 +25,11 @@ const Samplepage = () => {
 
     const {data: things, isLoading} = useThings()
 
-    console.log('things', things)
+    const addThing = useAddThingMutation()
+
+    const onAddThing = () => {
+        addThing.mutate({ title: 'New Thing'})
+    }
 
     return (<>
         <h1 className={classes.header}>Sample page</h1>
@@ -39,6 +44,8 @@ const Samplepage = () => {
             )}
         </ul>
         }
+        <h2>Add a thing</h2>
+        <button onClick={onAddThing}>Add Thing</button>
     </>)
 }
 
