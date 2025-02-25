@@ -21,6 +21,8 @@ const useThings = ():Response => {
 
   const { data, isLoading, isError } = useThingsQuery()
 
+  console.log(data)
+
   return ({
     data: getCleanData(data || []),
     isLoading: isLoading,
